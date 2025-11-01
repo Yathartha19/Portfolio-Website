@@ -1,3 +1,5 @@
+'use client'
+
 import FlipCard from "@/components/FlipCard";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaGithub, FaAngleDown } from "react-icons/fa";
@@ -26,7 +28,7 @@ export default function Hero() {
 
           <div className="flex flex-row items-center text-gray-500 max-md:hidden">
             <div className="mt-[0.1rem] mr-2 w-1.5 h-1.5 rounded-full bg-green-600"></div>
-            <p className="hover:text-gray-300 transition-colors duration-200 cursor-default hover:cursor-pointer">
+            <p className="hover:text-gray-300 transition-colors duration-200 cursor-default hover:cursor-pointer" onClick={() => window.open('https://ridetrailo.com', '_blank')}>
               Currently building <span className="text-gray-200 font-medium">Trailo</span>
             </p>
           </div>

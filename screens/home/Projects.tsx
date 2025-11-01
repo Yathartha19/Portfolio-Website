@@ -11,40 +11,41 @@ export default function WorkInProgress() {
   const projects = [
     {
       num: "01",
-      title: "RAPTOR RAG System",
-      desc: "AI-powered fitness and nutrition recommender with structured lifting logic and real-time feedback.",
-      tags: ["LLM", "RAG", "Python"],
-      gradient: "from-purple-500/10 to-blue-500/5",
+      title: "MERN Docs",
+      link: "https://mern-docs.vercel.app/",
+      desc: "Comprehensive MERN stack documentation platform with lessons, and live code samples to help developers learn on their own.",
+      tags: ["MERN", "Next.js", "Tailwind"],
+      image: "/images/mern-docs.png",
+      gradient: "from-[#3b82f6]/20 to-[#1e3a8a]/10", // blue gradient
     },
     {
       num: "02",
-      title: "InstaEngage",
-      desc: "Real-time Instagram engagement analytics platform built on Kafka and Spark, streaming live metrics.",
-      tags: ["Kafka", "Spark", "Streamlit"],
-      gradient: "from-cyan-400/10 to-blue-500/5",
+      title: "Trailo",
+      link: "https://ridetrailo.com/",
+      desc: "Trail discovery and group hiking app — plan routes, explore terrains, and organize trips with map support and real-time coordination.",
+      tags: ["Next.js", "Startup", "Mobile App"],
+      image: "/images/trailo.png",
+      gradient: "from-[#06b6d4]/20 to-[#0ea5e9]/10", // cyan to sky-blue gradient
     },
     {
       num: "03",
-      title: "ForDyn OCR",
-      desc: "Offline OCR pipeline for invoices and structured data extraction with Doctr and OpenCV.",
-      tags: ["OCR", "Computer Vision", "Doctr"],
-      gradient: "from-emerald-400/10 to-teal-500/5",
+      title: "PESU I/O Mentor",
+      link: "https://pesu.io/",
+      desc: "Guided students through a full-stack web development course under PESU I/O, focusing on real-world projects and practical solutions.",
+      tags: ["Mentorship", "Full-Stack", "Teaching", "Course"],
+      image: "/images/pesuio.png",
+      gradient: "from-[#3b82f6]/25 to-[#1d4ed8]/10", // violet gradient
     },
     {
       num: "04",
-      title: "Trailo",
-      desc: "A hiking and trail-planning app with offline maps, route sharing, and collaborative trip features.",
-      tags: ["Next.js", "Mapbox", "Firebase"],
-      gradient: "from-orange-400/10 to-yellow-500/5",
-    },
-    {
-      num: "05",
-      title: "EcoTrack",
-      desc: "An environmental impact tracker that helps users monitor and reduce their carbon footprint through data visualization.",
-      tags: ["D3.js", "Python", "Flask"],
-      gradient: "from-green-400/10 to-lime-500/5",
+      title: "Portfolio Website",
+      desc: "My personal website built with Next.js and Tailwind — designed to reflect my developer philosophy: minimal, fast, and aesthetically structured.",
+      tags: ["Next.js", "Tailwind", "Design", "SEO"],
+      image: "/images/portfolio.png",
+      gradient: "from-[#050505]/20 to-[#1c1c1c]/10", // indigo
     },
   ];
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -77,7 +78,7 @@ export default function WorkInProgress() {
   const totalScrollable = vh * (groups - 1);
   const cardWidth = vw * 0.4;
   const gap = vw * 0.05;
-  const totalWidth = projects.length * cardWidth + 2 * gap;
+  const totalWidth = projects.length * cardWidth + 3 * gap;
   const maxTranslatePx = totalWidth - vw;
   const progressRatio = totalScrollable > 0 ? scrollY / totalScrollable : 0;
   const translatePx = progressRatio * maxTranslatePx;
@@ -87,7 +88,7 @@ export default function WorkInProgress() {
       <section ref={containerRef} className="bg-[#0c0c0c] text-white px-6 py-16">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-semibold tracking-tight text-white/90">
-            What I’ve Worked On
+            What I’m Doing
           </h2>
           <div className="w-20 h-0.5 bg-white/20 mx-auto mt-4"></div>
         </div>
@@ -124,18 +125,17 @@ export default function WorkInProgress() {
     );
   }
 
-  // ========== DESKTOP CAROUSEL ==========
   return (
     <section
       ref={containerRef}
       style={{ height: `${groups * 100}vh` }}
-      className="relative pl-10 pr-10 bg-[#0c0c0c] text-white"
+      className="relative mx-25 bg-[#0c0c0c] text-white"
     >
-      <div className="sticky top-[10vh] z-20 border-b border-[#101010]/60 pt-8 pb-6 bg-[#0c0c0c]/70 backdrop-blur-md px-10">
-        <h2 className="text-5xl font-semibold tracking-tight text-white/90">
-          What I’ve Worked On
+      <div className="sticky top-[10vh] z-20 border-b border-[#101010]/60 pt-8 pb-6 bg-[rgb(0,0,0,0)] backdrop-blur-md px-10">
+        <h2 className="text-5xl -ml-6 font-semibold tracking-tight text-white/90">
+          What I’m Doing
         </h2>
-        <div className="w-30 h-0.5 bg-white/20 mt-4"></div>
+        <div className="-ml-6 w-30 h-0.5 bg-white/20 mt-4"></div>
       </div>
 
       <div className="sticky top-[calc(10vh+8rem)] h-[65vh] flex items-center overflow-hidden">
@@ -149,15 +149,14 @@ export default function WorkInProgress() {
           {projects.map((p, i) => (
             <div
               key={i}
-              className={`w-[40vw] h-[65vh] shrink-0 border border-white/10 border-l-0 relative overflow-hidden flex flex-col justify-end group transition-all duration-300 bg-linear-to-br ${p.gradient} ${
-                i === 0 ? "ml-[5vw]" : ""
-              } ${i === projects.length - 1 ? "mr-[5vw]" : ""}`}
-            >
+              className={`w-[40vw] h-[65vh] shrink-0 border border-white/10 relative overflow-hidden flex flex-col justify-end group transition-all duration-300 bg-linear-to-br ${p.gradient}`}>
               <div className="absolute top-0 right-0 w-px h-full bg-white/10"></div>
-              <div className="absolute top-6 left-8 text-7xl font-bold text-white/5 select-none">
+              <div className="absolute top-6 right-8 text-7xl font-bold text-white/10 select-none">
                 {p.num}
               </div>
-
+              <div className="w-full h-full">
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover"/>
+              </div>
               <div className="p-10">
                 <div className="flex space-x-3 mb-6">
                   {p.tags.map((t, j) => (

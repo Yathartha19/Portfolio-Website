@@ -60,7 +60,7 @@ export default function FlipCard() {
             <div className="flex flex-col text-sm text-gray-300 font-light tracking-wide leading-relaxed">
               <p>▶ Initializing interface...</p>
               <p>▶ Loading modules...</p>
-              <p>▶ Compiling...</p>
+              <p>▶ Deploying...</p>
             </div>
 
             <div className="flex justify-between text-[0.7rem] text-gray-600 uppercase tracking-widest">
