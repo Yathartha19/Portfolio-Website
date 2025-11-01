@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto_Condensed } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[#0c0c0c]">
+        <Analytics />
         <Navbar />
         {children}
         <Footer />
