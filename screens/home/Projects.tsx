@@ -6,6 +6,7 @@ export default function WorkInProgress() {
   const [scrollY, setScrollY] = useState(0);
   const [vh, setVh] = useState(0);
   const [vw, setVw] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const projects = [
     {
@@ -13,7 +14,7 @@ export default function WorkInProgress() {
       title: "RAPTOR RAG System",
       desc: "AI-powered fitness and nutrition recommender with structured lifting logic and real-time feedback.",
       tags: ["LLM", "RAG", "Python"],
-      gradient: "from-purple-500/10 to-pink-500/5",
+      gradient: "from-purple-500/10 to-blue-500/5",
     },
     {
       num: "02",
@@ -47,12 +48,20 @@ export default function WorkInProgress() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setVh(window.innerHeight);
-      setVw(window.innerWidth);
+      const handleResize = () => {
+        setVh(window.innerHeight);
+        setVw(window.innerWidth);
+        setIsMobile(window.innerWidth < 1000);
+      };
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
 
   useEffect(() => {
+    if (isMobile) return; 
+
     const handleScroll = () => {
       const section = containerRef.current;
       if (!section) return;
@@ -62,29 +71,71 @@ export default function WorkInProgress() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [vh]);
+  }, [vh, isMobile]);
 
   const groups = Math.ceil(projects.length / 2);
   const totalScrollable = vh * (groups - 1);
-
-  const cardWidth = vw * 0.4; 
-  const gap = vw * 0.05; 
-  const totalWidth = projects.length * cardWidth + 2 * gap; 
-  const maxTranslatePx = totalWidth - vw; 
+  const cardWidth = vw * 0.4;
+  const gap = vw * 0.05;
+  const totalWidth = projects.length * cardWidth + 2 * gap;
+  const maxTranslatePx = totalWidth - vw;
   const progressRatio = totalScrollable > 0 ? scrollY / totalScrollable : 0;
   const translatePx = progressRatio * maxTranslatePx;
 
+  if (isMobile) {
+    return (
+      <section ref={containerRef} className="bg-[#0c0c0c] text-white px-6 py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl font-semibold tracking-tight text-white/90">
+            What I’ve Worked On
+          </h2>
+          <div className="w-20 h-0.5 bg-white/20 mx-auto mt-4"></div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {projects.map((p, i) => (
+            <div
+              key={i}
+              className={`border border-white/10 rounded-md p-6 relative overflow-hidden bg-linear-to-br ${p.gradient}`}
+            >
+              <div className="absolute top-3 right-3 text-6xl font-bold text-white/5 select-none">
+                {p.num}
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {p.tags.map((t, j) => (
+                  <span
+                    key={j}
+                    className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/60 font-mono tracking-wide"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-white">
+                {p.title}
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                {p.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  // ========== DESKTOP CAROUSEL ==========
   return (
     <section
       ref={containerRef}
       style={{ height: `${groups * 100}vh` }}
-      className="relative pl-14 pr-14 bg-[#0c0c0c] text-white"
+      className="relative pl-10 pr-10 bg-[#0c0c0c] text-white"
     >
-      <div className="sticky top-[10vh] z-20 bg-[rgba(0,0,0,0)] backdrop-blur-lg border-b border-[#101010]/60 pt-8 pb-6 px-16">
+      <div className="sticky top-[10vh] z-20 border-b border-[#101010]/60 pt-8 pb-6 bg-[#0c0c0c]/70 backdrop-blur-md px-10">
         <h2 className="text-5xl font-semibold tracking-tight text-white/90">
           What I’ve Worked On
         </h2>
-        <div className="w-24 h-0.5 bg-white/20 mt-4"></div>
+        <div className="w-30 h-0.5 bg-white/20 mt-4"></div>
       </div>
 
       <div className="sticky top-[calc(10vh+8rem)] h-[65vh] flex items-center overflow-hidden">
@@ -103,7 +154,6 @@ export default function WorkInProgress() {
               } ${i === projects.length - 1 ? "mr-[5vw]" : ""}`}
             >
               <div className="absolute top-0 right-0 w-px h-full bg-white/10"></div>
-
               <div className="absolute top-6 left-8 text-7xl font-bold text-white/5 select-none">
                 {p.num}
               </div>
