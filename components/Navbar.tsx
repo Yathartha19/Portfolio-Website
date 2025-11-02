@@ -66,7 +66,7 @@ export default function Navbar() {
       {/* SLIDING MENU */}
       <div
         ref={menuRef}
-        className={`fixed top-[10vh] w-[calc(100vw-4rem)] ml-8 border-l border-r border-b border-white/40 border-l border-r border-b border-white/40
+        className={`fixed top-[10vh] w-[calc(100vw-4rem)] ml-8 border-l border-r border-b border-white/40
         bg-transparent backdrop-blur-lg
         shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-all duration-500 
         z-50 ${isOpen ? "opacity-100" : "opacity-0"} rounded-none`}
