@@ -5,20 +5,23 @@
   display: none;
 }
 
+.no-select {
+  user-select: none;      /* Disable text selection */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none;    /* For Firefox */
+  -ms-user-select: none;     /* For IE/Edge */
+}
+
 .roboto {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 300;
 }
 
-.perspective {
-  perspective: 1000px;
+@keyframes ping-slow {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  75%, 100% { transform: scale(2); opacity: 0; }
 }
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }

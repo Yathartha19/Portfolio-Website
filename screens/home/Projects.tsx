@@ -139,6 +139,7 @@ export default function WorkInProgress() {
       style={{ height: `${(maxTranslatePx / vh) * 100 + 100}vh` }}
       className="relative bg-[#0c0c0c] text-white pt-[10vh]"
     >
+
       <div className="sticky flex flex-row justify-between px-29 top-[10vh] z-20 pt-8 pb-6 bg-[rgb(0,0,0,0)] backdrop-blur-md">
         <div>
           <h2 className="text-5xl font-semibold tracking-tight text-white/90">
@@ -146,7 +147,7 @@ export default function WorkInProgress() {
           </h2>
           <div className="w-30 h-0.5 bg-white/20 mt-4"></div> 
         </div>
-        <div className="flex flex-row items-center justify-end pr-24 text-2xl text-white/80">
+        <div className="flex flex-row items-center justify-end pr-24 text-2xl text-white/80 z-2">
           <FaAngleRight
             className={`transition-transform duration-500 ${
               isHorizontal ? "rotate-0" : "rotate-90"
@@ -165,7 +166,7 @@ export default function WorkInProgress() {
         </div>
       </div>
 
-      <div className="sticky top-[calc(10vh+8rem)] h-[75vh] flex items-center overflow-hidden">
+      <div className="sticky top-[calc(10vh+8rem)] h-[75vh] flex items-center overflow-hidden z-2">
         <div
           className="flex transition-transform duration-75 ease-linear"
           style={{
@@ -183,8 +184,8 @@ export default function WorkInProgress() {
                 {p.num}
               </div>
               <div className="relative w-full">
-                <Image src={p.image} alt={p.title} width={800} height={400} className="group w-[calc(100%-2rem)] ml-4 h-full object-cover border border-white/5 group-hover:scale-102 transition duration-200"/>
-                <div className="absolute inset-0 bg-black/50 rounded-lg opacity-30 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
+                <Image src={p.image} alt={p.title} width={800} height={400} className="group w-[calc(100%-2rem)] mx-4 h-full object-cover border border-white/5 group-hover:scale-102 transition duration-200"/>
+                <div className="absolute mx-4 inset-0 bg-black/50 rounded-lg opacity-30 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
               </div>
               <div className="p-10">
                 <div className="flex space-x-3 mb-6">

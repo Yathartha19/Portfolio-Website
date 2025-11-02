@@ -1,23 +1,28 @@
 'use client'
 
-import FlipCard from "@/components/FlipCard";
+import CodeCard from "@/components/CodeCard";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaGithub, FaAngleDown, FaEnvelope } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <main className="min-h-screen w-full bg-[#0c0c0c] flex flex-col justify-between text-white">
+    <main className="md:min-h-screen w-full bg-[#0c0c0c] flex flex-col justify-between text-white">
       
-      <article className="flex flex-col md:flex-row items-center justify-between mx-30 mt-[30vh] md:mt-[22vh] pb-12 gap-16">
-        <div className="md:hidden absolute right-[10%] top-[30%] w-[180px] h-[180px] rounded-full 
-                bg-linear-to-br from-gray-500/40 to-white/30 blur-3xl 
-                animate-pulse pointer-events-none"></div>
-        <div className="flex flex-col max-md:items-start max-md:justify-center gap-8 max-w-2xl md:pl-8">
-          <h1 className="text-6xl lg:text-7xl max-md:border-l pl-2 font-semibold tracking-tight">
+      <article className="flex flex-col md:flex-row items-start sm:items-center justify-between mx-8 md:mx-30 pt-[17vh] md:pt-[30vh] xl:pt-[22vh] md:pb-12 gap-16">
+
+        <div className="absolute right-[10%] top-[30%] md:right-[60%] w-[180px] h-[180px] rounded-full bg-linear-to-br from-blue-800/40 to-blue-800/40 blur-3xl pointer-events-none z-0"></div> 
+        <div className="absolute top-[25%] right-[10%] md:right-[60%] w-[320px] h-80 bg-linear-to-br from-purple-500/40 to-purple-500/40 blur-[100px] rounded-full pointer-events-none z-0" /> 
+        <div className="absolute bottom-[8%] lg:bottom-[40%] left-[8%] w-60 h-60 bg-linear-to-tr from-red-400/30 to-red-300/30 blur-[80px] rounded-full pointer-events-none z-0" />
+
+        <div className="max-md:hidden absolute right-[12%] top-[20%] w-[300px] h-[200px] rounded-full bg-linear-to-br from-violet-900/40 to-blue-900/40 blur-3xl pointer-events-none z-0"></div>
+        <div className="max-md:hidden absolute right-[10%] top-[60%] w-[300px] h-[200px] rounded-full bg-linear-to-br from-blue-900/40 to-blue-900/40 blur-3xl pointer-events-none z-0"></div>
+
+        <div className="flex flex-col max-md:items-start max-md:justify-center gap-8 max-w-2xl md:pl-8 z-2">
+          <h1 className="text-6xl lg:text-7xl font-semibold tracking-tight">
             Yathartha Aarush
           </h1>
 
-          <div className="flex flex-wrap max-md:border-l max-md:pl-2 max-md:flex-col gap-x-10 gap-y-3 text-[0.75rem] lg:text-sm tracking-widest text-gray-500 uppercase">
+          <div className="flex flex-wrap gap-x-10 gap-y-3 text-[0.96rem] lg:text-sm tracking-widest text-gray-400 uppercase">
             <p>Web Developer</p>
             <p>SDE</p>
             <p>Startup Founder</p>
@@ -28,23 +33,26 @@ export default function Hero() {
             Hi, I’m a passionate full-stack developer from <span className="font-normal">Bangalore, India,</span> focused on creating reliable and thoughtfully designed applications that solve real problems.
           </p>
 
-          <div className="flex flex-row items-center text-gray-500 max-md:hidden">
-            <div className="mt-[0.1rem] mr-2 w-1.5 h-1.5 rounded-full bg-green-600"></div>
-            <p className="hover:text-gray-300 transition-colors duration-200 cursor-default hover:cursor-pointer" onClick={() => window.open('https://ridetrailo.com', '_blank')}>
-              Currently building <span className="text-gray-200 font-medium">Trailo</span>
+          <div className="flex items-center text-gray-400 hover:text-gray-200 transition-all duration-300">
+            <div className="relative w-2 h-2 mr-2">
+              <div className="absolute w-2 h-2 bg-green-500 rounded-full animate-ping-slow"></div>
+              <div className="absolute w-2 h-2 bg-green-600 rounded-full"></div>
+            </div>
+            <p onClick={() => window.open('https://ridetrailo.com', '_blank')} className="cursor-pointer">
+              Currently building <span className="font-medium text-gray-100">Trailo</span>
             </p>
           </div>
         </div>
 
-        <div className="flex-1 mr-8 flex justify-end w-full h-[50vh] md:h-[60vh]">
+        <div className="max-xl:hidden flex-1 mr-8 flex justify-end w-full h-[50vh] md:h-[60vh]">
           <div className="w-full md:w-[25vw] rounded-md flex items-center justify-center max-xl:hidden">
-            <FlipCard />
+            <CodeCard />
           </div>
         </div>
 
       </article>
 
-      <section className="flex flex-col-reverse max-md:gap-4 md:flex-row items-center justify-between px-30 py-6 text-white/60 text-sm ">
+      <section className="max-md:hidden flex flex-col-reverse max-md:gap-4 md:flex-row items-center justify-between px-30 py-6 text-white/60 text-sm ">
         
         <div className="hover:text-gray-300 transition-colors duration-200 cursor-default">
           IST<span className="opacity-0">_</span>(UTC+05:30)
@@ -52,11 +60,6 @@ export default function Hero() {
 
         <div className="border-t border-white/60 w-full mx-6 max-md:hidden" />
 
-        <div className="flex max-md:hidden items-center justify-center gap-2 hover:text-gray-300 transition-all duration-200 cursor-pointer">
-          <FaAngleDown size={14} className="mb-px" />
-        </div>
-
-        <div className="border-t border-white/60 w-full mx-6" />
 
         <div className="flex gap-5">
           <Link href="mailto:aarushyathartha19@gmail.com" target="_blank" aria-label="Email">

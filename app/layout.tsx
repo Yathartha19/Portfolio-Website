@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://yathartha-aarush.vercel.app/meta-image.png", // 👈 Place this image in /public/
+        url: "https://yathartha-aarush.vercel.app/meta-image.png",
         width: 1200,
         height: 600,
         alt: "Yatharth Aarush Portfolio Preview",

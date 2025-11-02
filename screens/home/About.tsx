@@ -2,15 +2,18 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="min-h-screen w-full bg-[#0c0c0c] text-gray-100 flex items-center justify-center px-8 sm:px-10 md:px-20 lg:px-30 py-16 md:py-20">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl gap-12 md:gap-16">
+    <section className="min-h-screen w-full bg-[#0c0c0c] text-gray-100 flex items-center justify-center px-8 sm:px-10 md:px-20 lg:px-30 py-16 md:py-20 z-2">
+      <div className="flex relative flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-12 md:gap-16">
+
+        <div className="max-md:hidden absolute left-[30%] bottom-[0%] w-[300px] h-[200px] rounded-full bg-linear-to-br from-violet-900/40 to-blue-900/40 blur-3xl pointer-events-none z-0"></div>
+        <div className="max-md:hidden absolute left-[0%] top-[0%] w-[300px] h-[200px] rounded-full bg-linear-to-br from-blue-900/40 to-blue-900/40 blur-3xl pointer-events-none z-0"></div>
         
-        <div className="flex-1 text-left space-y-6 sm:space-y-8">
+        <div className="flex-1 text-left sm:mx-20 space-y-6 sm:space-y-8 z-2">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-gray-100">
             Hello,
           </h1>
 
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">
+          <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 sm:font-light">
             I’m Yathartha, a developer based in Bangalore, India.
           </p>
 
@@ -33,13 +36,13 @@ export default function About() {
         </div>
 
         <div className="flex-1 flex justify-center md:justify-end">
-          <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden border border-gray-800 bg-[#0a0a0a]">
+          <div className="w-64 h-64 md:w-72 md:h-72 lg:w-64 lg:h-64 xl:w-96 xl:h-96 rounded-lg overflow-hidden border border-gray-800 bg-[#0a0a0a]">
             <Image
               width={800}
               height={800}
               src="/profile.jpeg"
               alt="Profile"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
+              className="w-full h-full object-cover transition duration-700"
             />
           </div>
         </div>
