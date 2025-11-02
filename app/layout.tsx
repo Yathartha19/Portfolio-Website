@@ -13,8 +13,42 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Yatharth Aarush | Portfolio",
-  description: "The portfolio of Yatharth Aarush, a software developer. Explore about me, my projects, skills, and contact information.",
+  title: "Yatharth Aarush | Developer",
+  description:
+    "Portfolio of Yatharth Aarush, a full-stack developer.",
+  keywords: [
+    "Yatharth Aarush",
+    "Yathartha",
+    "Portfolio",
+    "Software Developer",
+    "Full Stack Developer",
+  ],
+  authors: [{ name: "Yatharth Aarush" }],
+  openGraph: {
+    title: "Yatharth Aarush | Developer",
+    description:
+      "Discover the work and projects of Yatharth Aarush, a full-stack developer.",
+    url: "https://yathartha-aarush.vercel.app/",
+    siteName: "Yatharth Aarush",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://yathartha-aarush.vercel.app/meta-image.png", // 👈 Place this image in /public/
+        width: 1200,
+        height: 600,
+        alt: "Yatharth Aarush Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yatharth Aarush | Developer",
+    description:
+      "Portfolio of Yatharth Aarush, a full-stack developer.",
+    images: ["https://yathartha-aarush.vercel.app/meta-image.png"],
+  },
+  metadataBase: new URL("https://yathartha-aarush.vercel.app"),
 };
 
 export default function RootLayout({

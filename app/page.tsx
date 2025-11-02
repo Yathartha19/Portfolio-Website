@@ -5,10 +5,17 @@ import About from "@/screens/home/About";
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
-      <Projects />
-      <About />
-    </div>
+    <main>
+      <section className="max-lg:hidden">
+        <Hero />
+        <Projects />
+        <About />
+      </section>
+      <section className="lg:hidden">
+        <Hero />
+        <About />
+        <Projects />
+      </section>
+    </main>
   );
 }

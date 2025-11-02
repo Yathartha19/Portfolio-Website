@@ -2,16 +2,18 @@
 
 import FlipCard from "@/components/FlipCard";
 import Link from "next/link";
-import { FaInstagram, FaLinkedin, FaGithub, FaAngleDown } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub, FaAngleDown, FaEnvelope } from "react-icons/fa";
 
 export default function Hero() {
   return (
     <main className="min-h-screen w-full bg-[#0c0c0c] flex flex-col justify-between text-white">
       
-      <section className="flex flex-col md:flex-row items-center justify-between mx-30 mt-[30vh] md:mt-[22vh] pb-12 gap-16">
-        
-        <div className="flex flex-col max-md:items-center max-md:justify-center gap-8 max-w-2xl md:pl-8">
-          <h1 className="text-6xl lg:text-7xl max-md:text-center font-semibold tracking-tight">
+      <article className="flex flex-col md:flex-row items-center justify-between mx-30 mt-[30vh] md:mt-[22vh] pb-12 gap-16">
+        <div className="md:hidden absolute right-[10%] top-[30%] w-[180px] h-[180px] rounded-full 
+                bg-linear-to-br from-gray-500/40 to-white/30 blur-3xl 
+                animate-pulse pointer-events-none"></div>
+        <div className="flex flex-col max-md:items-start max-md:justify-center gap-8 max-w-2xl md:pl-8">
+          <h1 className="text-6xl lg:text-7xl max-md:border-l pl-2 font-semibold tracking-tight">
             Yathartha Aarush
           </h1>
 
@@ -40,9 +42,9 @@ export default function Hero() {
           </div>
         </div>
 
-      </section>
+      </article>
 
-      <section className="flex flex-col max-md:gap-4 md:flex-row items-center justify-between px-30 py-6 text-white/60 text-sm ">
+      <section className="flex flex-col-reverse max-md:gap-4 md:flex-row items-center justify-between px-30 py-6 text-white/60 text-sm ">
         
         <div className="hover:text-gray-300 transition-colors duration-200 cursor-default">
           IST<span className="opacity-0">_</span>(UTC+05:30)
@@ -51,13 +53,15 @@ export default function Hero() {
         <div className="border-t border-white/60 w-full mx-6 max-md:hidden" />
 
         <div className="flex max-md:hidden items-center justify-center gap-2 hover:text-gray-300 transition-all duration-200 cursor-pointer">
-          <span>Scroll</span>
           <FaAngleDown size={14} className="mb-px" />
         </div>
 
         <div className="border-t border-white/60 w-full mx-6" />
 
         <div className="flex gap-5">
+          <Link href="mailto:aarushyathartha19@gmail.com" target="_blank" aria-label="Email">
+            <FaEnvelope size={20} className="hover:text-gray-300 transition-all duration-200 hover:scale-110" />
+          </Link>
           <Link href="https://www.instagram.com/yathartha_aarush" target="_blank">
             <FaInstagram size={20} className="hover:text-gray-300 transition-all duration-200 hover:scale-110" />
           </Link>

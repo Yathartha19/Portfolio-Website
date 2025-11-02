@@ -5,15 +5,13 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0c0c0c] border-t border-white/20 text-white/60 py-8 px-6 sm:px-10 md:px-20 lg:px-30">
+    <footer className="bg-[#0c0c0c] border-t border-white/20 text-white/60 py-8 px-6 sm:px-10 md:px-20 lg:mx-30">
       <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-6 text-center md:text-left">
 
-        {/* === Left Section === */}
         <p className="text-sm tracking-wide order-2 md:order-1">
           © <span className="text-gray-300">Yathartha Aarush</span> {new Date().getFullYear()}
         </p>
 
-        {/* === Right Section (Icons) === */}
         <div className="flex gap-5 order-1 md:order-2 justify-center">
           <Link href="mailto:aarushyathartha19@gmail.com" target="_blank" aria-label="Email">
             <FaEnvelope size={20} className="hover:text-gray-300 transition-all duration-200 hover:scale-110" />
