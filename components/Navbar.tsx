@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { FaGripLines, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,14 +22,13 @@ export default function Navbar() {
     <>
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full h-[10vh] z-50 text-white bg-transparent backdrop-blur-md">
-        <div className="mx-8 sm:mx-30 h-full flex items-center justify-between border-b border-white/40">
+        <div className="mx-8 sm:mx-30 h-full flex items-center justify-between border-b border-white/20">
           {/* Logo */}
           <div
             onClick={() => (window.location.href = "/")}
             className="no-select text-white/85 tracking-wide text-[1.2rem] font-light hover:cursor-pointer transform transition-transform duration-200 ease-out hover:scale-[1.02]"
           >
-            <span className="max-sm:hidden roboto">YATHARTHA AARUSH</span>
-            <div className="sm:hidden roboto">YATHARTHA A.</div>
+            <div className="text-3xl sm:text-4xl font-black">Y.</div>
           </div>
 
           {/* Desktop Menu */}
@@ -69,7 +69,7 @@ export default function Navbar() {
         className={`fixed md:hidden top-[10vh] w-[calc(100vw-4rem)] ml-8 border-l border-r border-b border-white/40
         bg-transparent backdrop-blur-lg
         shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-all duration-500 
-        z-50 ${isOpen ? "opacity-100" : "opacity-0"} rounded-none`}
+        z-50 ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-100"} rounded-none`}
       >
         <div className="h-full flex flex-col items-start gap-2 pt-4 text-white/90 text-lg tracking-wide font-light mx-8 pb-4">
           <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors duration-300 border-b w-full px-4 py-3 border-white/40">About</Link>

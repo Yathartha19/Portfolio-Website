@@ -14,21 +14,21 @@ export default function WorkInProgress() {
   const projects = [
     {
       num: "01",
+      title: "Trailo",
+      link: "https://ridetrailo.com/",
+      desc: "Trail discovery and group hiking app — plan routes, explore terrains, and organize trips with map support and real-time coordination.",
+      tags: ["Next.js", "Startup", "Mobile App"],
+      image: "/images/trailo-v2.png",
+      gradient: "from-[#092643] to-[#0ea5e9]/10", 
+    },
+    {
+      num: "02",
       title: "MERN Docs",
       link: "https://mern-docs.vercel.app/",
       desc: "Comprehensive MERN stack documentation platform with lessons, and live code samples to help developers learn on their own.",
       tags: ["MERN", "Next.js", "Tailwind"],
       image: "/images/mern-docs.png",
-      gradient: "from-[#3b82f6]/20 to-[#1e3a8a]/10", // blue gradient
-    },
-    {
-      num: "02",
-      title: "Trailo",
-      link: "https://ridetrailo.com/",
-      desc: "Trail discovery and group hiking app — plan routes, explore terrains, and organize trips with map support and real-time coordination.",
-      tags: ["Next.js", "Startup", "Mobile App"],
-      image: "/images/trailo.png",
-      gradient: "from-[#06b6d4]/20 to-[#0ea5e9]/10", // cyan to sky-blue gradient
+      gradient: "from-[#08121F] to-[#1e3a8a]/10",
     },
     {
       num: "03",
@@ -36,8 +36,8 @@ export default function WorkInProgress() {
       link: "https://pesu.io/",
       desc: "Guided students through a full-stack web development course under PESU I/O, focusing on real-world projects and practical solutions.",
       tags: ["Mentorship", "Full-Stack", "Teaching", "Course"],
-      image: "/images/pesuio.png",
-      gradient: "from-[#3b82f6]/25 to-[#1d4ed8]/10", // violet gradient
+      image: "/images/pesuio-v2.png",
+      gradient: "from-[#1d4ed8]/25 to-[#3b82f6]/10", 
     },
     {
       num: "04",
@@ -45,8 +45,8 @@ export default function WorkInProgress() {
       link: "/",
       desc: "My personal website built with Next.js and Tailwind — designed to reflect my developer philosophy: minimal, fast, and aesthetically structured.",
       tags: ["Next.js", "Tailwind", "Design", "SEO"],
-      image: "/images/portfolio.png",
-      gradient: "from-[#050505]/20 to-[#1c1c1c]/10", // indigo
+      image: "/images/portfolio-v3.png",
+      gradient: "from-[#050505]/20 to-[#092643]/10", 
     },
   ];
 
@@ -137,17 +137,17 @@ export default function WorkInProgress() {
     <section
       ref={containerRef}
       style={{ height: `${(maxTranslatePx / vh) * 100 + 100}vh` }}
-      className="relative bg-[#0c0c0c] text-white pt-[10vh]"
+      className="relative bg-[#0c0c0c] text-white"
     >
 
-      <div className="sticky flex flex-row justify-between px-29 top-[10vh] z-20 pt-8 pb-6 bg-[rgb(0,0,0,0)] backdrop-blur-md">
+      <div className="sticky flex flex-row justify-between px-30 top-[3vh] xl:top-[5vh] z-20 pt-8 pb-6 bg-[rgb(0,0,0,0)] backdrop-blur-md">
         <div>
-          <h2 className="text-5xl font-semibold tracking-tight text-white/90">
+          <h2 className="text-4xl xl:text-5xl font-semibold tracking-tight text-white/90 pt-[5vh]">
             What I’m Doing
           </h2>
           <div className="w-30 h-0.5 bg-white/20 mt-4"></div> 
         </div>
-        <div className="flex flex-row items-center justify-end pr-24 text-2xl text-white/80 z-2">
+        <div className="flex flex-row items-center justify-end text-2xl text-white/80 z-2">
           <FaAngleRight
             className={`transition-transform duration-500 ${
               isHorizontal ? "rotate-0" : "rotate-90"
@@ -166,9 +166,9 @@ export default function WorkInProgress() {
         </div>
       </div>
 
-      <div className="sticky top-[calc(10vh+8rem)] h-[75vh] flex items-center overflow-hidden z-2">
+      <div className="sticky top-[calc(26vh)] xl:top-[calc(24vh)] h-[75vh] w-[calc(100vw)] bg-[radial-gradient(circle,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-size-[10px_10px] flex items-center overflow-hidden z-2">
         <div
-          className="flex transition-transform duration-75 ease-linear"
+          className="flex transition-transform duration-75 bg-[#0c0c0c] ease-linear ml-30"
           style={{
             width: `${totalWidth}px`,
             transform: `translateX(-${translatePx}px)`,
@@ -177,35 +177,33 @@ export default function WorkInProgress() {
           {projects.map((p, i) => (
             <div
               key={i}
-              className={`hover:cursor-pointer py-4  group w-[40vw] h-[80vh] shrink-0 relative overflow-hidden flex flex-col justify-end group transition-all duration-300 bg-linear-to-br ${p.gradient} ${i === 0 ? "ml-28" : ""}`}
+              className={`hover:cursor-pointer py-4 group w-[40vw] h-[80vh] shrink-0 relative overflow-hidden flex flex-col ${p.image ? "justify-end" : "justify-start"} group transition-all duration-300 bg-linear-to-br ${p.gradient}`}
               onClick={() => window.open(p.link, "_blank")}
               >
-              <div className="absolute top-6 right-8 text-7xl font-bold text-white/10 select-none">
+              <div className="absolute top-8 right-8 text-7xl font-bold text-white/10 select-none">
                 {p.num}
               </div>
-              <div className="relative w-full">
-                <Image src={p.image} alt={p.title} width={800} height={400} className="group w-[calc(100%-2rem)] mx-4 h-full object-cover border border-white/5 group-hover:scale-102 transition duration-200"/>
-                <div className="absolute mx-4 inset-0 bg-black/50 rounded-lg opacity-30 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
-              </div>
-              <div className="p-10">
-                <div className="flex space-x-3 mb-6">
-                  {p.tags.map((t, j) => (
-                    <span
-                      key={j}
-                      className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/60 font-mono tracking-wide group group-hover:scale-103 transition duration-200 "
-                    >
-                      {t}
-                    </span>
-                  ))}
+                <div className="relative w-full">
+                  <Image src={p.image} alt={p.title} width={800} height={400} className="group w-[calc(100%-2rem)] mx-4 h-full object-cover border border-white/5 group-hover:scale-102 transition duration-200"/>
+                  <div className="absolute mx-4 inset-0 bg-black/50 rounded-lg opacity-30 group-hover:opacity-0 transition duration-300 ease-in-out"></div>
+                </div> 
+                <div className="p-10">
+                  <div className="flex space-x-3 mb-6">
+                    {p.tags.map((t, j) => (
+                      <span
+                        key={j}
+                        className="text-xs px-3 py-1 rounded-full bg-white/10 text-white/60 font-mono tracking-wide group group-hover:scale-103 transition duration-200 "
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-2 group-hover:text-white group group-hover:scale-102 transition duration-200">
+                    {p.title}
+                  </h3>
+                  <p className="text-white/70 text-sm leading-relaxed group group-hover:scale-102 transition duration-200">{p.desc}</p>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2 group-hover:text-white group group-hover:scale-102 transition duration-200">
-                  {p.title}
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed group group-hover:scale-102 transition duration-200">{p.desc}</p>
               </div>
-
-              
-            </div>
           ))}
         </div>
       </div>
