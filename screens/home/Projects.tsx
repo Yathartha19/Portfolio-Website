@@ -17,7 +17,7 @@ export default function WorkInProgress() {
       title: "Trailo",
       link: "https://ridetrailo.com/",
       desc: "Trail discovery and group hiking app — plan routes, explore terrains, and organize trips with map support and real-time coordination.",
-      tags: ["Next.js", "Startup", "Mobile App"],
+      tags: ["Next.js", "Hiking App", "Mobile App"],
       image: "/images/trailo-v2.png",
       gradient: "from-[#092643] to-[#0ea5e9]/10", 
     },

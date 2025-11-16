@@ -18,7 +18,6 @@ export default function Hero() {
           <div className="flex flex-wrap gap-x-10 gap-y-3 text-[0.96rem] lg:text-sm tracking-widest text-gray-400 uppercase">
             <p>Web Developer</p>
             <p>SDE</p>
-            <p>Startup Founder</p>
             <p>India</p>
           </div>
 
