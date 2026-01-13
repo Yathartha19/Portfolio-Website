@@ -140,7 +140,7 @@ export default function WorkInProgress() {
       className="relative bg-[#0c0c0c] text-white"
     >
 
-      <div className="sticky flex flex-row justify-between px-30 top-[3vh] xl:top-[5vh] z-20 pt-8 pb-6 bg-[rgb(0,0,0,0)] backdrop-blur-md">
+      <div className="sticky flex flex-row justify-between px-30 top-0 z-20 pt-16 pb-6 bg-[rgb(0,0,0,0)] backdrop-blur-md">
         <div>
           <h2 className="text-4xl xl:text-5xl font-semibold tracking-tight text-white/90 pt-[5vh]">
             What I’m Doing

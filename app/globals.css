@@ -24,3 +24,16 @@
 .animate-ping-slow {
   animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
+
+@keyframes floatY {
+  0%, 70%, 100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(5px);
+  }
+}
+
+.animate-float {
+  animation: floatY 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

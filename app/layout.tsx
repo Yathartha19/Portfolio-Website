@@ -60,7 +60,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#0c0c0c]">
         <Analytics />
-        <Navbar />
+
         {children}
         <Footer />
       </body>
