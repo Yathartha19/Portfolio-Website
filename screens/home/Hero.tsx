@@ -1,14 +1,57 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
-  const navItems = [
-    { id: "about", label: "About Me", sub: "Who I am & what I do" },
-    { id: "work", label: "Work and Experience", sub: "My projects, roles, and experiences" },
-    { id: "gallery", label: "Gallery", sub: "Snapshots & experiments" },
-    { id: "contact", label: "Contact", sub: "Let’s get in touch" },
+  type NavItem =
+  | {
+      id: "about" | "contact";
+      label: string;
+      sub: string;
+      type: "section";
+    }
+  | {
+      id: string;
+      label: string;
+      sub: string;
+      type: "route";
+      path: `/${string}`;
+    };
+
+  const navItems: NavItem[] = [
+    { id: "about", label: "About Me", sub: "Who I am & what I do", type: "section" },
+    {
+      id: "work",
+      label: "Work and Experience",
+      sub: "My projects, roles, and experiences",
+      type: "route",
+      path: "/work",
+    },
+    {
+      id: "gallery",
+      label: "Gallery",
+      sub: "Anything worth keeping",
+      type: "route",
+      path: "/gallery",
+    },
+    { id: "contact", label: "Contact", sub: "Let’s get in touch", type: "section" },
   ];
+
+
+  const router = useRouter();
+
+  const handleNavClick = (item: NavItem): void => {
+    if (item.type === "route") {
+      router.push(item.path);
+    } else {
+      // Scroll without changing URL
+      const el = document.getElementById(item.id);
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <main
@@ -143,10 +186,16 @@ export default function Hero() {
             <div className="pointer-events-none absolute left-0 top-0 h-full w-px bg-[linear-gradient(180deg,transparent,rgba(96,165,250,0.55),rgba(56,189,248,0.35),transparent)] opacity-70" />
 
             {navItems.map((item, idx) => (
-              <a
+              <div
                 key={item.id}
-                href={`#${item.id}`}
+                role="button"
+                tabIndex={0}
+                onClick={() => handleNavClick(item)}
+                onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+                  if (e.key === "Enter") handleNavClick(item);
+                }}
                 className="
+                  hover:cursor-pointer
                   group relative h-full w-full
                   flex flex-col justify-center
                   rounded-xl border border-white/10
@@ -192,7 +241,7 @@ export default function Hero() {
                 <span className="pointer-events-none absolute right-6 top-10 text-white/20 group-hover:text-sky-100/70 transition-all duration-300 group-hover:translate-x-0.5">
                   →
                 </span>
-              </a>
+              </div>
             ))}
           </div>
 

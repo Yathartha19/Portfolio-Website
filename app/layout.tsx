@@ -3,7 +3,6 @@ import "./globals.css";
 import { Roboto_Condensed } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const robotoCondensed = Roboto_Condensed({
@@ -13,40 +12,38 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Yatharth Aarush | Developer",
+  title: "Yathartha Aarush | Developer",
   description:
-    "Portfolio of Yatharth Aarush, a full-stack developer.",
+    "Portfolio of Yathartha Aarush, a full-stack developer.",
   keywords: [
-    "Yatharth Aarush",
+    "Yathartha Aarush",
     "Yathartha",
     "Portfolio",
     "Software Developer",
     "Full Stack Developer",
   ],
-  authors: [{ name: "Yatharth Aarush" }],
+  authors: [{ name: "Yathartha Aarush" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Yatharth Aarush | Developer",
+    title: "Yathartha Aarush | Developer",
     description:
-      "Discover the work and projects of Yatharth Aarush, a full-stack developer.",
+      "Discover the work and projects of Yathartha Aarush, a full-stack developer.",
     url: "https://yathartha-aarush.vercel.app/",
-    siteName: "Yatharth Aarush",
+    siteName: "Yathartha Aarush",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "https://yathartha-aarush.vercel.app/meta-image.png",
-        width: 1200,
-        height: 600,
-        alt: "Yatharth Aarush Portfolio Preview",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yatharth Aarush | Developer",
+    title: "Yathartha Aarush | Developer",
     description:
-      "Portfolio of Yatharth Aarush, a full-stack developer.",
-    images: ["https://yathartha-aarush.vercel.app/meta-image.png"],
+      "Portfolio of Yathartha Aarush, a full-stack developer.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   metadataBase: new URL("https://yathartha-aarush.vercel.app"),
 };
