@@ -134,8 +134,12 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <button
+                <a
+                  href="/Yathartha_Aarush_Resume_Jan'26.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
+                    flex items-center justify-center
                     shrink-0
                     px-3 py-2 rounded-lg
                     border border-white/15 bg-white/3
@@ -146,7 +150,7 @@ export default function Hero() {
                   "
                 >
                   VIEW RESUME
-                </button>
+                </a>
               </div>
 
               {/* FOOTER */}
