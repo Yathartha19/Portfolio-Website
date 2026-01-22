@@ -43,6 +43,10 @@ export default function Contact() {
 
         {/* Single card */}
         <div className="rounded-xl border border-white/10 bg-neutral-900/55 backdrop-blur overflow-hidden">
+            
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(96,165,250,0.10),transparent_40%)]" />
+          <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-[linear-gradient(90deg,transparent,rgba(56,189,248,0.55),rgba(96,165,250,0.55),transparent)]" />
+                
           <div className="p-6">
             <p className="text-[0.65rem] tracking-[0.28em] text-white/45">CHANNELS</p>
 
@@ -57,10 +61,11 @@ export default function Contact() {
                   href="mailto:aarushyathartha19@gmail.com"
                   target={ "mailto:aarushyathartha19@gmail.com".startsWith('http') ? '_blank' : undefined}
                   className="
-                    group rounded-xl border border-white/10 bg-white/2
+                    group rounded-lg border border-white/10 bg-white/2
                     px-4 py-3 transition-all duration-300
                     hover:bg-white/6 hover:border-white/20
                     flex items-center justify-between gap-4
+                  border-l-sky-300
                   "
                 >
                   <div className="min-w-0">
@@ -77,10 +82,11 @@ export default function Contact() {
                   href="https://github.com/Yathartha19"
                   target={ "https://github.com/Yathartha19".startsWith('http') ? '_blank' : undefined}
                   className="
-                    group rounded-xl border border-white/10 bg-white/2
+                    group rounded-lg border border-white/10 bg-white/2
                     px-4 py-3 transition-all duration-300
                     hover:bg-white/6 hover:border-white/20
                     flex items-center justify-between gap-4
+                    border-l-sky-300
                   "
                 >
                   <div className="min-w-0">
@@ -97,10 +103,11 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/yathartha-aarush-4153ba2a4/"
                   target={ "https://www.linkedin.com/in/yathartha-aarush-4153ba2a4/".startsWith('http') ? '_blank' : undefined}
                   className="
-                    group rounded-xl border border-white/10 bg-white/2
+                    group rounded-lg border border-white/10 bg-white/2
                     px-4 py-3 transition-all duration-300
                     hover:bg-white/6 hover:border-white/20
                     flex items-center justify-between gap-4
+                    border-l-sky-300
                   "
                 >
                   <div className="min-w-0">
