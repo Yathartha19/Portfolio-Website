@@ -269,7 +269,7 @@ export default function Hero() {
               <div className="min-w-0">
                 <p className="text-[0.65rem] tracking-[0.22em] text-sky-100/60">HIGHLIGHT</p>
                 <p className="mt-1 text-sm tracking-wide text-white/80">
-                  Currently working on Trialo.
+                  Currently working on Trailo.
                 </p>
                 <p className="mt-2 text-[0.72rem] tracking-wide text-white/55">Website • App • Server</p>
               </div>
