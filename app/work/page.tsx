@@ -22,95 +22,92 @@ const SECTIONS: readonly { year: string; items: readonly WorkItem[] }[] = [
         type: "Project",
         title: "Trailo",
         org: "Personal",
-        period: "2025 → 2026",
-        location: "Bangalore / Remote",
-        stack: ["Next.js", "Map / Routing", "Firebase", "UI Systems"],
+        period: "2025 → Present",
+        location: "Bangalore",
+        stack: ["Next.js", "Google Maps SDK", "Flutter", "Node.js", "PostgreSQL", "Express", "Debian Linux", "Self-Hosting"],
         highlights: [
-          "Built product-style UI and navigation flows.",
-          "Worked on infra + deployment + iterations based on real usage.",
+          "A collaborative platform designed to simplify group ride coordination and communication for motorcyclists on their road trips, with features such as real-time location sharing, route planning, voice calls, safety alerts, image journaling and other trip organisation tools",
+          "Implemented the Flutter Mobile App and Website ( including SEO, and optimisation ). Also developed the backend server ( a Nodejs and Expressjs backend server self-hosted on a Debian Linux machine )."
         ],
         links: [
-          { label: "Website", href: "https://ridetrailo.com/" },
+          { label: "Website  ↗", href: "https://ridetrailo.com/" },
         ],
       },
       {
-        type: "Project",
-        title: "Legal Workflow Generator",
-        org: "Personal / Prototype",
-        period: "2026",
-        stack: ["Vector DB", "RAG", "LLM Orchestration"],
+        type: "Experience",
+        title: "Head of Web Development",
+        org: "Nexus PES",
+        period: "Aug 2024 → Present",
+        location: "Bangalore",
+        stack: ["Web Development", "Typescript", "Next.js"],
         highlights: [
-          "Turns dense policies/laws into step-by-step workflows.",
-          "Focus on traceability + linking back to sources.",
+          "Heading the Web Development Domain at Nexus PES.",
+          "Worked on several club projects, including the Nexus PES website and the NexGen Hackathon platform. Also organized andled a web development teaching session attended by over 20 participants.",
+          "Served as a Technical Mentor for NexGen Hackathon, guiding 40+ participants on technical strategy and implementation."
+        ],
+        links: [
+          { label: "Nexus PES ↗", href: "https://nexus-pes.vercel.app/" },
         ],
       },
+      {
+        type: "Experience",
+        title: "Teaching Assistant - Design and Analysis of Algorithms",
+        org: "PES University",
+        period: "Jan 2026 → Present",
+        location: "Bangalore",
+        stack: ["Data Structures", "Algorithms"],
+        highlights: [
+          "Served as a Teaching Assistant for the Design and Analysis of Algorithms Course at PES University, this course covered the concepts used in algorithm design and analysis, including topics such as sorting, searching, graph algorithms and dynamic programming.",
+        ],
+      }
     ],
   },
   {
     year: "2025",
     items: [
       {
-        type: "Project",
-        title: "InstaEngage: Instagram Engagement Analysis Platform",
-        org: "Personal",
-        period: "2025",
-        stack: ["Kafka", "Spark", "SQLite", "Streamlit"],
+        type: "Experience",
+        title: "Subject Matter Expert - Web Development",
+        org: "PESU I/O",
+        period: "Aug 2025 → Dec 2025",
+        location: "Bangalore",
+        stack: ["MERN Stack", "Full-Stack Development", "Web Development", "HTML", "CSS", "React.js", "JavaScript", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
         highlights: [
-          "Real-time + batch processing pipeline for engagement metrics.",
-          "Dashboard for metrics + error analysis.",
+          "Curated and taught the Full Stack Developer Bootcamp Course at PESU I/O.",
+          "Mentored over 60 students through the MERN stack curriculum, helping them debug issues and understand core web concepts during hands-on sessions.",
+          "Topics covering frontend fundamentals (HTML, CSS, JavaScript) to advanced React concepts (Hooks, Context API), Tailwind CSS, and complete backend development with Node.js and MongoDB - providing full MERN stack training through a hands-on, project-based approach"
+        ],
+        links: [
+          { label: "PESU I/O ↗", href: "https://pesu.io/" },
         ],
       },
       {
-        type: "Project",
-        title: "B2B Product Listing Automation (G2)",
-        org: "Personal",
+        type: "Experience",
+        title: "Research Intern at RAPID",
+        org: "RAPID PES",
         period: "2025",
-        stack: ["Selenium", "BeautifulSoup", "Kafka", "MongoDB", "Docker/K8s"],
+        stack: ["Image Segmentation", "Deep Learning", "Python", "Remote Sensing"],
         highlights: [
-          "Scrapes product signals and checks listing availability.",
-          "Streams updates, stores structured results, supports automation.",
+          "Researched about Rule-Based, Machine Learning Approaches for Rooftop Solar Suitability Mapping, in selected wards of Bangalore, India, and wrote a research paper about the topic",
         ],
       },
       {
-        type: "Project",
-        title: "RAG Gym Trainer + Nutrition Recommender",
-        org: "Capstone / Research-style build",
-        period: "2024 → 2025",
-        stack: ["RAG", "Embeddings", "Vector DB", "Prompting"],
+        type: "Experience",
+        title: "Teaching Assistant - Web Technologies",
+        org: "PES University",
+        period: "Aug 2025 → Dec 2025",
+        location: "Bangalore",
+        stack: ["MERN Stack", "HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
         highlights: [
-          "Workout selection + explanations rooted in structured knowledge.",
-          "Diet recommender tailored for Indian foods + macros.",
+          "Served as a Teaching Assistant for the Web Technologies Course at PES University, this course covered the basics of web development and the MERN stack.",
+          "Created an extensive Documentation Website for the MERN stack called MERN Docs for developers to learn and refer from.",
+        ],
+        links: [
+          { label: "MERN Docs ↗", href: "https://mern-docs.vercel.app/" },
         ],
       },
     ],
-  },
-  {
-    year: "2024",
-    items: [
-      {
-        type: "Project",
-        title: "Pose Correction + Rep/Tempo Monitoring",
-        org: "Computer Vision",
-        period: "2024",
-        stack: ["MediaPipe", "OpenCV", "SVC", "Realtime Pipeline"],
-        highlights: [
-          "Rep counting + tempo + mistake detection during exercises.",
-          "Designed feedback signals to be trainer-like (not generic).",
-        ],
-      },
-      {
-        type: "Project",
-        title: "Rooftop Solar Suitability (Bangalore)",
-        org: "Research / CV",
-        period: "2024",
-        stack: ["YOLO", "Segmentation", "Satellite Imagery"],
-        highlights: [
-          "Explored scalable rooftop detection for city-scale assessment.",
-          "Focus on practical constraints of dense urban imagery.",
-        ],
-      },
-    ],
-  },
+  }
 ];
 
 const PAGE_LINKS = [
@@ -200,18 +197,23 @@ export default function WorkPage() {
 
               <div className="relative mt-4 flex flex-col gap-2">
                 {SECTIONS.map((s) => (
-                  <a
+                  <button
                     key={s.year}
-                    href={`#y-${s.year}`}
+                    onClick={() => {
+                      const el = document.getElementById(`y-${s.year}`);
+                      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
                     className="
                       rounded-xl border border-white/10 bg-white/2
                       px-3 py-2 text-sm tracking-wide text-white/70
                       transition-all duration-300
                       hover:bg-white/6 hover:border-sky-200/25 hover:text-sky-100
+                      text-left hover:cursor-pointer
                     "
                   >
                     {s.year}
-                  </a>
+                  </button>
+
                 ))}
               </div>
 

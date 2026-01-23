@@ -28,31 +28,16 @@ const NAV = [
   { label: "Work", href: "/work" },
 ] as const;
 
-const FILTERS: readonly Category[] = ["All", "Photos", "UI", "Systems", "Notes", "Travel", "Random"] as const;
-
 const ITEMS: readonly GalleryItem[] = [
 
-  { id: "p1", category: "Photos", title: "MERN Docs", year: "2025", src: "/images/mern-docs.png", alt: "Coffee estate photo" },
-  { id: "p2", category: "Photos", title: "Dashboard UI", year: "2024", src: "/images/pesuio-v2.png", alt: "Dashboard UI screenshot" },
-  { id: "p3", category: "Notes", title: "Meeting Notes", year: "2023", src: "/images/portfolio-v3.png", alt: "Handwritten meeting notes" },
-  { id: "p4", category: "Travel", title: "Mountain Hike", year: "2022", src: "/images/trailo-v2.png", alt: "Mountain hike photo" },
+  // { id: "p1", category: "Photos", title: "MERN Docs", year: "2025", src: "/images/mern-docs.png", alt: "Coffee estate photo" },
   
 ] as const;
 
-function cx(...xs: Array<string | false | null | undefined>) {
-  return xs.filter(Boolean).join(" ");
-}
-
 export default function GalleryClient() {
-  const [active, setActive] = useState<Category>("All");
   const [openId, setOpenId] = useState<string | null>(null);
 
-  const filtered = useMemo(() => {
-    if (active === "All") return ITEMS;
-    return ITEMS.filter((x) => x.category === active);
-  }, [active]);
-
-  const openItem = useMemo(() => filtered.find((x) => x.id === openId) ?? null, [filtered, openId]);
+  const openItem = useMemo(() => ITEMS.find((x) => x.id === openId) ?? null, [ITEMS, openId]);
 
   return (
     <main
@@ -93,43 +78,10 @@ export default function GalleryClient() {
           </nav>
         </header>
 
-        {/* Filter bar */}
-        <div
-          className="
-            mt-10 rounded-xl border border-white/10
-            bg-neutral-900/35 backdrop-blur
-            p-3 relative overflow-hidden
-          "
-        >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(96,165,250,0.10),transparent_55%)]" />
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-px bg-[linear-gradient(180deg,transparent,rgba(96,165,250,0.55),rgba(56,189,248,0.35),transparent)] opacity-70" />
-
-          <div className="relative flex flex-wrap gap-2">
-            {FILTERS.map((f) => {
-              const on = f === active;
-              return (
-                <button
-                  key={f}
-                  type="button"
-                  onClick={() => setActive(f)}
-                  className={cx(
-                    "rounded-xl border px-4 py-2 text-[0.75rem] tracking-wide transition-all duration-300",
-                    on
-                      ? "border-sky-200/30 bg-white/6 text-sky-100"
-                      : "border-white/10 bg-white/2 text-white/70 hover:bg-white/6 hover:border-white/20"
-                  )}
-                >
-                  {f}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
         {/* Masonry */}
-        <section className="mt-6">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-            {filtered.map((item) => (
+        <section className="mt-16">
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:balance]">
+            {ITEMS.map((item) => (
               <article key={item.id} className="mb-4 break-inside-avoid">
                 <div
                   className="
