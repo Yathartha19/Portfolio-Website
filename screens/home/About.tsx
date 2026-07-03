@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-
 type Pill = { text: string };
 type Highlight = { k: string; title: string; desc: string; info: string };
 type Quick = { label: string; value: string };
@@ -92,10 +90,7 @@ export default function Sections() {
               </div>
 
               <aside className="w-full lg:w-[360px] rounded-xl border border-white/10 bg-neutral-900/60 backdrop-blur p-5 mt-4">
-              
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(96,165,250,0.10),transparent_60%)]" />
-                <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-[linear-gradient(90deg,transparent,rgba(56,189,248,0.55),rgba(96,165,250,0.55),transparent)]" />
-                
+                              
                 <p className="text-[0.65rem] tracking-[0.28em] text-white/45">WORK WITH ME</p>
 
                 <div className="mt-4 grid grid-cols-2 gap-3">
@@ -134,9 +129,6 @@ export default function Sections() {
                   key={h.k}
                   className="rounded-xl border border-white/10 bg-neutral-900/60 backdrop-blur p-5 transition-all duration-300 hover:border-white/20 hover:bg-neutral-900/80"
                 >
-
-                  <div className="rounded-lg pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(96,165,250,0.12),transparent_40%,rgba(255,255,255,0.02))]" />
-                  <div className="pointer-events-none absolute left-0 top-0 h-full w-0.5 bg-[linear-gradient(180deg,transparent,rgba(96,165,250,0.55),rgba(56,189,248,0.35),transparent)]" />
 
                   <div className="flex items-start justify-between gap-4">
                     <p className="text-[0.6rem] tracking-[0.28em] text-white/40">{h.k}</p>

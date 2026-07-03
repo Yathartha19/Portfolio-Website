@@ -43,10 +43,7 @@ export default function Contact() {
 
         {/* Single card */}
         <div className="rounded-xl border border-white/10 bg-neutral-900/55 backdrop-blur overflow-hidden">
-            
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(96,165,250,0.10),transparent_40%)]" />
-          <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-[linear-gradient(90deg,transparent,rgba(56,189,248,0.55),rgba(96,165,250,0.55),transparent)]" />
-                
+                            
           <div className="p-6">
             <p className="text-[0.65rem] tracking-[0.28em] text-white/45">CHANNELS</p>
 

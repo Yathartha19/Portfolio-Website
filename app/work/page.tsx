@@ -188,9 +188,6 @@ export default function WorkPage() {
                 overflow-hidden
               "
             >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(96,165,250,0.10),transparent_55%)]" />
-              <div className="pointer-events-none absolute left-0 top-0 h-full w-px bg-[linear-gradient(180deg,transparent,rgba(96,165,250,0.55),rgba(56,189,248,0.35),transparent)] opacity-70" />
-
               <p className="relative text-[0.65rem] tracking-[0.28em] text-white/45">
                 YEARS
               </p>
@@ -237,8 +234,6 @@ export default function WorkPage() {
                     relative overflow-hidden
                   "
                 >
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(96,165,250,0.10),transparent_60%)]" />
-                  <div className="pointer-events-none absolute left-0 top-0 h-px w-full bg-[linear-gradient(90deg,transparent,rgba(96,165,250,0.65),rgba(56,189,248,0.45),transparent)]" />
                   <div className="relative flex items-center justify-between gap-4">
                     <h2 className="text-xl font-semibold tracking-tight text-white/90">
                       {section.year}
@@ -398,7 +393,6 @@ export default function WorkPage() {
               relative overflow-hidden
             "
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(96,165,250,0.10),transparent_55%)]" />
             <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm tracking-wide text-white/60">
                 Want to talk about a project or collaboration?
