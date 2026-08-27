@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 type WorkItem = {
-  type: "Project" | "Experience";
+  type: "Project" | "Experience" | "Internship";
   title: string;
   org?: string;
   period: string;
@@ -18,6 +18,32 @@ const SECTIONS: readonly { year: string; items: readonly WorkItem[] }[] = [
   {
     year: "2026",
     items: [
+      {
+        type: "Internship",
+        title: "Full Stack Developer Intern",
+        org: "SKaaS - Skills as a Service",
+        period: "April 2026 → July 2026",
+        location: "Bangalore",
+        stack: ["Next.js", "Python", "LiveKit SDK", "AWS S3, EC2, CloudFront", "Docker", "PostgreSQL", "GitLab"],
+        highlights: [
+          "Built an AI based interview platform using Next.js, featuring meeting rooms with audio and video recording, in-browser collaborative code editor and whiteboard, and reports linking questions to timestamped points in the recording.",
+          "Designed an AI Agent in Python, capable of autonomously conducting entire interviews or passively transcribe sessions using real-time speech processing, and auto-generate performance reports giving important insights such as candidate strengths and weaknesses, overall candidate scores benchmarked against other candidates for the same role.",
+          "Containerized and deployed everything on an AWS EC2 instance, using S3 Buckets for video storage and Cloudfront as a Content Delivery Network to serve meeting recordings."
+        ],
+        links: [
+        ],
+      },
+      {
+        type: "Experience",
+        title: "Teaching Assistant - Python",
+        org: "PES University",
+        period: "Aug 2026 → Dec 2026",
+        location: "Bangalore",
+        stack: ["Python"],
+        highlights: [
+          "Served as a Teaching Assistant for the Python Course at PES University.",
+        ],
+      },
       {
         type: "Project",
         title: "Trailo",
@@ -37,7 +63,7 @@ const SECTIONS: readonly { year: string; items: readonly WorkItem[] }[] = [
         type: "Experience",
         title: "Head of Web Development",
         org: "Nexus PES",
-        period: "Aug 2024 → Present",
+        period: "Aug 2024 → February 2026",
         location: "Bangalore",
         stack: ["Web Development", "Typescript", "Next.js"],
         highlights: [
@@ -53,7 +79,7 @@ const SECTIONS: readonly { year: string; items: readonly WorkItem[] }[] = [
         type: "Experience",
         title: "Teaching Assistant - Design and Analysis of Algorithms",
         org: "PES University",
-        period: "Jan 2026 → Present",
+        period: "Jan 2026 → May 2026",
         location: "Bangalore",
         stack: ["Data Structures", "Algorithms"],
         highlights: [
@@ -279,10 +305,7 @@ export default function WorkPage() {
                               <div className="flex flex-wrap items-center gap-2">
                                 <span
                                   className={classNames(
-                                    "rounded-lg border px-2.5 py-1 text-[0.65rem] tracking-[0.22em]",
-                                    item.type === "Project"
-                                      ? "border-sky-200/20 bg-sky-200/5 text-sky-100/70"
-                                      : "border-white/15 bg-white/3 text-white/65"
+                                    "rounded-lg border px-2.5 py-1 text-[0.65rem] tracking-[0.22em] border-white/15 bg-white/3 text-white/65"
                                   )}
                                 >
                                   {item.type.toUpperCase()}

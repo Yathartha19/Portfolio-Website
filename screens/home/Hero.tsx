@@ -151,7 +151,7 @@ export default function Hero() {
                 </div>
 
                 <a
-                  href="/Yathartha_Aarush_Resume_Jan'26.pdf"
+                  href="/Yathartha_Aarush_Resume_Jul'26.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

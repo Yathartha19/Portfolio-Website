@@ -31,13 +31,13 @@ const highlights: Highlight[] = [
   },
   {
     k: '02',
-    title: 'Research Intern at RAPID',
+    title: 'Research at RAPID',
     desc: 'Researched about Rule-Based, Machine Learning Approaches for Rooftop Solar Suitability Mapping, in Bangalore, India.',
     info: 'RESEARCH PAPER',
   },
   {
     k: '03',
-    title: 'Trailo - Ride Sharing App',
+    title: 'Trailo - Road Trip App',
     desc: 'Trail discovery and group hiking app - plan routes, explore terrains, and organize trips with map support and real-time coordination.',
     info: 'PROJECT',
   },

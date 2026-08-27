@@ -56,7 +56,7 @@ export default function GalleryClient() {
               Anything worth keeping
             </h1>
             <p className="mt-4 text-[0.95rem] leading-relaxed tracking-wide text-white/55">
-              UI shots, random photos, notes, ideas — not curated too hard.
+              UI shots, random photos, notes, ideas etc.
             </p>
           </div>
 
